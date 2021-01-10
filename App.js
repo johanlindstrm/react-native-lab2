@@ -5,22 +5,16 @@ import { useState } from 'react';
 // TODO
 // CSS touch ups
   // Devices align properly
+  // Images imported and used correct
 
-// Total Devices Text Align and prettify
-
-// Add state change on button touch on = true return 1 and change to green already green cannot add one
-  // Logic : if indicator is green device is turned on = boolean true if it is not green it must be red and off
-
-//let indicatorColor = 'green';
-
+// Total device on 
+  // display correct amount of devices on when button is pressed
 let amount = 0;
 
 
 const indicatorOn = () => {
 
 }
-
-
 
 const Room = ({value}) => {
 
@@ -29,7 +23,7 @@ const Room = ({value}) => {
     require('./assets/kitchen.png'),
     require('./assets/living-room.png')
   ];
-  
+
   return(
     <View style={{backgroundColor:"#40bab9" , width:120, height:130}}>
       <View>
