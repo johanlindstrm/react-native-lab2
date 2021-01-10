@@ -25,19 +25,21 @@ const Room = ({value}) => {
   ];
 
   return(
-    <View style={{backgroundColor:"#40bab9" , width:120, height:130}}>
+    <View style={{backgroundColor:"#40bab9" , width:120, height:140}}>
       <View>
         <Image style={styles.imgSize} source={imgSrc[1]}/>
-        <Text style={{textAlign: 'center', fontWeight:'bold'}}>{value}</Text>
+        <Text style={{textAlign: 'center', fontWeight:'bold', paddingTop:10}}>{value}</Text>
       </View>
     </View>
+
+    
   );
 };
 
 const Rooms = () => {
   return(
     <View style={styles.rowContainer}>
-      <Room value={"Living Room"}/>
+      <Room value={"Living Room"} />
       <Room value={"Bedroom"} />
       <Room value={"Kitchen"} />
     </View>
@@ -53,14 +55,14 @@ const [deviceOn, setDeviceOn] = useState();
   return(
     <View style={styles.deviceStyle}>
       <View 
-        style={{backgroundColor: indicatorColor, height:20 , width: 20}}>
+        style={{backgroundColor: indicatorColor, height:20 , width: 20, marginLeft:20}}>
       </View>
 
-      <View >
+      <View style={{flex:0.8, marginLeft:20}}>
         <Text style={{fontSize:18}}>{value}</Text>
       </View>
 
-      <View style={{backgroundColor:'white', width:50}}>
+      <View style={{backgroundColor:'white', width:50, flex:0.15, }}>
         <Button title="On" onPress={() => {
           setIndicatorColor('green');
           console.log('indicator color:', indicatorColor);
@@ -201,7 +203,7 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: 'beige',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-start',
     margin:5,
     alignItems:'center',
   },
