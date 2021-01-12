@@ -9,48 +9,37 @@ import { useState } from 'react';
 
 // Total device on 
   // display correct amount of devices on when button is pressed
-let amount = 0;
+const kitchen = require('./assets/kitchen.png')
+const bedroom = require('./assets/bed.png')
+const livingroom = require('./assets/living-room.png')
 
-
-const indicatorOn = () => {
-
-}
-
-const Room = ({value}) => {
-
-  const imgSrc = [
-    require('./assets/bed.png'),
-    require('./assets/kitchen.png'),
-    require('./assets/living-room.png')
-  ];
-
+const Room = ({value, icon}) => {
   return(
     <View style={{backgroundColor:"#40bab9" , width:120, height:140}}>
       <View>
-        <Image style={styles.imgSize} source={imgSrc[1]}/>
+        <Image style={styles.imgSize} source={icon}/>
         <Text style={{textAlign: 'center', fontWeight:'bold', paddingTop:10}}>{value}</Text>
       </View>
     </View>
-
-    
   );
 };
 
 const Rooms = () => {
   return(
     <View style={styles.rowContainer}>
-      <Room value={"Living Room"} />
-      <Room value={"Bedroom"} />
-      <Room value={"Kitchen"} />
+      <Room icon={livingroom} value={"Living Room"} />
+      <Room icon={bedroom} value={"Bedroom"} />
+      <Room icon={kitchen} value={"Kitchen"} />
     </View>
   );
 };
 
+
+let amount = 0;
+
 const Device = ({value}) => {
 
 const [indicatorColor, setIndicatorColor] = useState('gray');
-
-const [deviceOn, setDeviceOn] = useState();
 
   return(
     <View style={styles.deviceStyle}>
@@ -64,8 +53,9 @@ const [deviceOn, setDeviceOn] = useState();
 
       <View style={{backgroundColor:'white', width:50, flex:0.15, }}>
         <Button title="On" onPress={() => {
-          setIndicatorColor('green');
+          setIndicatorColor('green')
           console.log('indicator color:', indicatorColor);
+
         }} />
 
         <Button title="Off" onPress={() => {
@@ -76,7 +66,6 @@ const [deviceOn, setDeviceOn] = useState();
     </View>
   );
 };
-
 
 const Devices = () => {
   return(
